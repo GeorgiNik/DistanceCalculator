@@ -1,4 +1,6 @@
-# Distance Calculator
+# Distance Calculator 
+![.NET build](https://github.com/GeorgiNik/DistanceCalculator/actions/workflows/dotnet.yml/badge.svg)![Docker image build](https://github.com/GeorgiNik/DistanceCalculator/actions/workflows/docker-image.yml/badge.svg)
+
 
 This is a solution to task for calculating distance. It follows the principles of Clean Architecture.
 
