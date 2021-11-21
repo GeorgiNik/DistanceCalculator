@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  web:
+    image: ${DOCKER_REGISTRY-}web
+    build:
+      context: .
+      dockerfile: src/Startup/Dockerfile
+    environment:
+      - "UseInMemoryDatabase=false"
+      - "ConnectionStrings__DefaultConnection=Server=db;Database=DistanceCalculator;User=sa;Password=admin123!;MultipleActiveResultSets=true"
+      - "IdentityServer__Key__Type=Development"
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ASPNETCORE_URLS=http://+:5000"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    restart: on-failure
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      - "SA_PASSWORD=admin123!"
+      - "ACCEPT_EULA=Y"
