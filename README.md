@@ -2,7 +2,6 @@
 
 This is a solution to task for calculating distance. It follows the principles of Clean Architecture.
 
-
 ## Technologies
 
 * [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
@@ -32,6 +31,17 @@ Second option:
 
 *This option is configured to use InMemoryDatabase, no sql server is required
 
+### Testing distance calculation
+
+  * Get distance between two cordinates
+```
+http://localhost:5000/api/distance/coordinates?latitudeA=3&longitudeA=12&latitudeB=33&longitudeB=33
+```
+
+  * Get distance between two cordinates for specific culture
+```
+http://localhost:5000/api/distance/coordinates?latitudeA=3&longitudeA=12&latitudeB=33&longitudeB=33&culture=en-US
+```
 
 ## Overview
 
